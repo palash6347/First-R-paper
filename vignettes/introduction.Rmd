@@ -1,0 +1,83 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{My first R package creation after several try}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## All documentation of what you have to do to build  a package....
+
+(1) Create a project via Rstudio
+
+(2) A package name should not be any _ or any period(.). But Upper and lower case letter will be fine. So A project name should be like that.
+
+(3) delete hello.r and namespace and delete file form man folder hello.r
+
+(4) library(devtools,roxygens2,testthat,knitr)
+
+(5) may be you need to install pdflatex for documentation.
+
+(6)`devtools::install_github("hadley/devtools")`
+
+(7) Download qpdf for windows from `https://sourceforge.net/projects/qpdf/?source=typ_redirect`
+   Extract files in a temp folder
+  Copy the contents of the bin folder to `%SystemRoot%\System32`. You can find it in search     manue of next to the start tab in windows 10.
+
+(8) May be need On Windows, download and install Rtools. NB: this is not an R package!        library(devtools)
+   has_devel() to check everything is running. devtools::session_info() to check session.
+
+(9) Create a r function.
+
+(10) After creating the r file save it and go to build and config build tool option.
+
+(11) select roxygen2 and select all the file.
+
+(12) run Build> clean and build.
+
+(13) use load_all() for checking if the function you wrote is working or not.
+
+(14) devtools::document(). Create namespace and .md file for you. (Ctrl/Cmd + Shift + D. )Go to the Description manu and Change the information you need. 
+
+(15) MIT + file LICENSE use in the licence manue of the description. Then run  `use_mit_license(options(usethis.full_name = "Palash Sharma"))` . It creates a licence.md file.
+
+(16) Also to make sure You write @param x write something and @return write something and @ example give some example
+
+(17) Put your Curson in between the function of your R package and press code>Insart Roxygen skeleton. Change your skeleton accordingly.
+
+(18) use devtools::build_vegenette() and devtools::use_vegenette("introduction ") for creating a rmarkdown file. Ctrl/Cmd + Shift + K to run it or use the knit option.
+
+
+(19) Ctrl/Cmd + Shift + L and check and run it in the console panel.
+Then Build>Install and Restart to install the package in your PC.
+
+(20)  Press Build>Check package (ctrl+shift+E) for through ckeck up if you want to submit it in CRAN. You are basically done in here. The hard part i guess is Check package option. If you don't want to submit it in CRAN then choose
+
+ 
+(21) library(testing), vignette('introduction',package="testing")
+
+(22) install.packages("devtools")
+devtools::install_github("username/packagename").For installing in github.
+
+(23) use devtools::use_github()
+
+(24) Use devtools::use_mitlicence()
+
+(25) use devtools::use_readme_rmd()
+
+(26) use devtools::testthat() for unit testing purpose.
+
+(27) use devtools::install('.', dependencies=TRUE)
+
+(28) use More> Build source packages and more>binary source packages
+
+(29) devtools::build()) and devtools::submit_cran() or go to https://cran.r-project.org/submit.html
+
+
+(30)  At last you are done with 0 error, 0 warning and 0 note.  Huuuuuuuuuu
+
+
+usethis::use_readme_rmd() or use devtools::use_readme_rmd()
